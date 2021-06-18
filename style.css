@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Roboto+Condensed&family=Ubuntu&display=swap');
+
+
+:root{
+    --pink: #DE6262;
+    --dark: #333741;
+    --peach: #FFB88C;
+    --green: #52c234;
+    --season:'Roboto Condensed', sans-serif;
+    --headings: 'Ubuntu', sans-serif;
+    --paragraph: 'Inter', sans-serif;
+}
+
+#body{
+    background: transparent;
+    padding: 50px;
+}
+
+.inner-container{
+    position: relative;
+}
+.page-title, .page-sub-title{
+    color: white;
+    text-align: center;
+    font-family: var(--season);
+}
+
+.page-title{
+    margin: 30px 0px 5px;
+    font-size: 40px;
+}
+
+.page-sub-title{
+    font-weight: 200;
+    margin: 0px 0px 30px 0px;
+    font-size: 23px;
+}
+
+
+html{
+    background: linear-gradient(45deg, var(--pink) 10%, var(--peach) 90%);
+    height: 1vh;
+}
+
+img{
+    display: block;
+    width: 100%;
+}
+
+.card-container{
+    perspective: 1000;
+    margin: 0 auto 50px;
+    width: 400px;
+}
+
+.front, .back{
+    backface-visibility: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 30px;
+    box-sizing: border-box;
+    transition-delay: .1s;
+    transition: 0;
+}
+
+.front{
+    transform: rotateY(0deg);
+    font-family: var(--headings);
+}
+
+.back{
+    transform: rotateY(180deg);
+    opacity: 0;
+    padding-top: 60px;
+    backface-visibility: visible;
+    background: var(--dark);
+    color: white;
+}
+
+#card{
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, .45);
+    overflow: hidden;
+    transition: .8s;
+    border: none;
+}
+.card:hover{
+    transform: rotateY(180deg);
+}
+
+.card:hover .front{
+    opacity: 0;
+}
+.card:hover .back{
+    opacity: 1;
+}
+
+.sub-title{
+    color: var(--pink);
+    animation: slide-in .75s;
+    animation: slide-in .75s cubic-bezier(0.625, 0.075, 0.110, 1.165);
+    animation-timing-function: cubic-bezier(0.625, 0.075, 0.110, 1.165);
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+    font-family: var(--headings);
+}
+
+@keyframes slide-in {
+    0%{
+        transform: translate3d(-300px, 0, 0);
+    }
+    100%{
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.title{
+    color: var(--dark);
+    animation: slide-in-slow .95s;
+    animation: slide-in-slow .95s cubic-bezier(0.625, 0.075, 0.115, 1.165);
+    animation-timing-function: cubic-bezier(0.625, 0.075, 0.115, 1.165);
+}
+
+@keyframes slide-in-slow {
+    0%{
+        transform:translate3d(-300px, 0, 0)
+    }
+    20%{
+        transform:translate3d(-300px, 0, 0)
+    }
+    100%{
+        transform:translate3d(0, 0, 0)
+    }
+}
+
+.synopsis{
+    font-family: var(--headings);
+    color: var(--pink);
+    font-size: 27px;
+    font-weight: 600;
+    margin: 0px 0px 15px;
+}
+
+p{
+    color: rgba(white, 0.85);
+    font-size: 19px;
+    line-height: 1.5;
+    margin: 0px 0px 35px;
+    font-family: var(--paragraph);
+}
+
+.btn{
+    font-family: var(--season);
+    border: 1px solid var(--peach);
+    border-radius: 5px;
+    background: transparent;
+    display: inline-block;
+    font-size: 15px;
+    padding: 8px 20px 9px 15px;
+    color: var(--peach);
+    transition: .5s;
+    margin: 0px 2px 0px;
+    font-weight: 100;
+}
+
+#btn.secondary{
+    border-color: var(--pink);
+    color: var(--pink);
+}
+#btn.primary{
+    border-color: var(--peach);
+    color: var(--peach);
+}
+
+#btn.secondary:hover{
+    background: var(--pink);
+}
+
+#btn:hover{
+    cursor: pointer;
+    background: var(--peach);
+    color: white;
+}
+
+#btn i {
+    margin: 0px 5px 0px;
+}
+
+.image{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: slide-in-right 1.25s;
+    animation: slide-in-right 1.25s cubic-bezier(0.625, 0.075, 0.110, 1.165);
+    animation-timing-function: 1.25s cubic-bezier(0.625, 0.075, 0.110, 1.165);
+    font-size: 35px;
+    font-weight: 600;
+    margin: 0;
+}
+
+@keyframes slide-in-right{
+    0%{
+        transform: translate3d(400px, 0, 0);
+    }
+    30%{
+        transform: translate3d(400px, 0, 0);
+        opacity: 0;
+    }
+    40%{
+        opacity: 0;
+    }
+    100%{
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
